@@ -6,7 +6,7 @@ const rateLimit = require('express-rate-limit');
 const path = require('path');
 
 const connectDB = require('./config/db');
-const initAdmin = require('./utils/initAdmin');
+const initUsers = require('./utils/initUsers');
 const errorHandler = require('./middleware/errorHandler');
 
 const authRoutes = require('./routes/authRoutes');
@@ -22,7 +22,7 @@ const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
 connectDB().then(() => {
-  initAdmin();
+  initUsers();
 });
 
 // Security middleware
