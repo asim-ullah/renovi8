@@ -69,6 +69,10 @@ app.use('/api/analytics', analyticsRoutes);
 app.use('/api/notifications', notificationRoutes);
 
 // Health check
+app.get('/', (req, res) => {
+  res.json({ success: true, message: 'Renovi8 API is live' });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ success: true, message: 'Renovi8 API is running', timestamp: new Date().toISOString() });
 });
